@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="login-Style.css" />
+  </head>
+  <body>
+    <div id="Login_Window">
+      <div class="center">
+        <h1>Login</h1>
+        <form action="" id="login-Form" onsubmit="login(event)">
+          <div class="text_field">
+            <input type="email" required id="email_input" />
+            <span></span>
+            <label for="Email">Email</label>
+          </div>
+          <div class="text_field">
+            <input type="password" required id="password_input" />
+            <span></span>
+            <label for="Password">Password</label>
+          </div>
+          <div class="password">Forgot Password?</div>
+          <input type="submit" value="Login" />
+          <div class="signup_link">Not a member? <a href="#">Signup</a></div>
+        </form>
+      </div>
+    </div>
+    <div id="backgroundDiv"></div>
+    <script src="loginScript.js"></script>
+  </body>
+</html>

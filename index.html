@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="Main-Style.css" />
+  </head>
+  <body>
+    <div id="infoAlign">
+      <div id="infoPage">
+        <div id="infoX" onclick="closeInfo()">
+          <i class="fa-solid fa-xmark" id="xmark"></i>
+          <i class="fa-solid fa-circle-xmark" id="xmarkCircle"></i>
+        </div>
+        <div id="infoImg"></div>
+        <div id="infoText"></div>
+        <div id="similarBox">
+          <h1>Similar Titles:</h1>
+          <div id="similarContainer"></div>
+        </div>
+      </div>
+      <div id="infoClose" onclick="closeInfo()"></div>
+    </div>
+
+    <header>
+      <nav>
+        <ul>
+          <li><div id="logo"></div></li>
+          <li><a href="">Home</a></li>
+          <li><a href="">Search</a></li>
+          <li>
+            <a href=""><i class="fa fa-solid fa-user"></i></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div id="slide">
+      <div id="slideFilmShadow"></div>
+    </div>
+    <div class="rowContainer">
+      <div class="row">
+        <h1>Popular:</h1>
+        <div class="filmContainer" id="popular"></div>
+      </div>
+
+      <div class="row">
+        <h1>Thriller:</h1>
+        <div class="filmContainer" id="thriller"></div>
+      </div>
+
+      <div class="row">
+        <h1>Action:</h1>
+        <div class="filmContainer" id="action"></div>
+      </div>
+
+      <div class="row">
+        <h1>Comedy:</h1>
+        <div class="filmContainer" id="comedy"></div>
+      </div>
+
+      <div class="row">
+        <h1>Horror:</h1>
+        <div class="filmContainer" id="horror"></div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script
+      src="https://kit.fontawesome.com/1e87e55979.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
