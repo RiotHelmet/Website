@@ -18,6 +18,8 @@ body {
   height: 0;
 }
 
+/* Header // Nav */
+
 header {
   position: sticky;
   top: 0;
@@ -72,6 +74,8 @@ nav ul :nth-child(4) {
   font-size: 25px;
 }
 
+/* Slide - Not yet implemented - The big image ontop of main page */
+
 #slide {
   width: 100%;
   align-items: center;
@@ -82,6 +86,72 @@ nav ul :nth-child(4) {
   overflow: clip;
   top: 0;
 }
+
+.slideFilm {
+  width: 100%;
+  top: 200px;
+}
+#slideFilmShadow {
+  box-shadow: 0 60px 50px 0 var(--bgColor) inset,
+    0 -150px 100px 0 var(--bgColor) inset;
+  height: 900px;
+  width: 100%;
+  position: absolute;
+}
+
+.slideText {
+  width: fit-content;
+  height: 100px;
+  position: absolute;
+  left: 10%;
+  transform: translate(0, -50%);
+  display: flex;
+  flex-direction: column;
+}
+
+.slideText h1 {
+  margin: auto;
+  color: white;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 50px;
+}
+
+.slidePlay {
+  background-color: white;
+  border-radius: 4px;
+  height: fit-content;
+  margin: auto;
+  padding: 10px;
+}
+
+.slideInfo {
+  background-color: white;
+  border-radius: 4px;
+  height: fit-content;
+  margin: auto;
+  padding: 10px;
+}
+
+.slideButtons {
+  height: 50px;
+  margin-top: auto;
+  display: flex;
+  padding-top: 10px;
+  user-select: none;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 25px;
+  width: 20vw;
+}
+
+.slideInfo:hover {
+  opacity: 0.7;
+}
+
+.slidePlay:hover {
+  opacity: 0.7;
+}
+
+/* The individual rows of filmDivs on the main page. */
 
 .rowContainer {
   display: flex;
@@ -109,6 +179,67 @@ nav ul :nth-child(4) {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
+.film {
+  height: 92.5%;
+  z-index: 0;
+  display: block;
+  position: relative;
+}
+
+.filmContainer {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  overflow-x: scroll;
+}
+
+.filmDiv {
+  height: 100%;
+  width: fit-content;
+  padding-left: 15px;
+  justify-content: center;
+  position: relative;
+  bottom: 0;
+}
+/* Film Hover - When you hover over one of the filmDivs in on the main page */
+.filmHover {
+  width: 500px;
+  justify-content: center;
+  display: none;
+  height: 96%;
+  position: relative;
+  box-shadow: 0px 0px 20px 0 black;
+  overflow: clip;
+}
+
+.filmHover h1 {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.filmDiv:hover > .film {
+  opacity: 0;
+  display: none;
+}
+
+.filmDiv:hover > .filmHover {
+  opacity: 1;
+  display: block;
+  animation-name: widen;
+  animation-duration: 0.2s;
+}
+
+@keyframes widen {
+  0% {
+    width: 20%;
+  }
+  100% {
+    width: 500px;
+  }
+}
+
+/* Iframes - When you hover over a filmDiv on the main page */
+
 iframe {
   z-index: 0;
   border: none;
@@ -132,48 +263,7 @@ iframe {
   width: 100%;
 }
 
-.filmContainer {
-  width: 100%;
-  height: 300px;
-  display: flex;
-  overflow-x: scroll;
-}
-
-.slideFilm {
-  width: 100%;
-  top: 200px;
-}
-#slideFilmShadow {
-  box-shadow: 0 60px 50px 0 var(--bgColor) inset,
-    0 -150px 100px 0 var(--bgColor) inset;
-  height: 900px;
-  width: 100%;
-  position: absolute;
-}
-
-.filmDiv {
-  height: 100%;
-  width: fit-content;
-  padding-left: 15px;
-  justify-content: center;
-  position: relative;
-  bottom: 0;
-}
-
-.filmHover {
-  width: 500px;
-  justify-content: center;
-  display: none;
-  height: 96%;
-  position: relative;
-  box-shadow: 0px 0px 20px 0 black;
-  overflow: clip;
-}
-
-.filmHover h1 {
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
+/* Overlay - The overlay of film hovers. */
 
 .overlay {
   position: absolute;
@@ -229,84 +319,7 @@ iframe {
   margin-left: auto;
 }
 
-.film {
-  height: 92.5%;
-  z-index: 0;
-  display: block;
-  position: relative;
-}
-
-.filmDiv:hover > .film {
-  opacity: 0;
-  display: none;
-}
-
-.filmDiv:hover > .filmHover {
-  opacity: 1;
-  display: block;
-  animation-name: widen;
-  animation-duration: 0.2s;
-}
-
-@keyframes widen {
-  0% {
-    width: 20%;
-  }
-  100% {
-    width: 500px;
-  }
-}
-
-.slideText {
-  width: fit-content;
-  height: 100px;
-  position: absolute;
-  left: 10%;
-  transform: translate(0, -50%);
-  display: flex;
-  flex-direction: column;
-}
-
-.slideText h1 {
-  margin: auto;
-  color: white;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 50px;
-}
-
-.slidePlay {
-  background-color: white;
-  border-radius: 4px;
-  height: fit-content;
-  margin: auto;
-  padding: 10px;
-}
-
-.slideInfo {
-  background-color: white;
-  border-radius: 4px;
-  height: fit-content;
-  margin: auto;
-  padding: 10px;
-}
-
-.slideButtons {
-  height: 50px;
-  margin-top: auto;
-  display: flex;
-  padding-top: 10px;
-  user-select: none;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 25px;
-}
-
-.slideInfo:hover {
-  opacity: 0.7;
-}
-
-.slidePlay:hover {
-  opacity: 0.7;
-}
+/* Info align aligns the infoDiv in the center of the screen */
 
 #infoAlign {
   width: 100%;
@@ -317,6 +330,19 @@ iframe {
   overflow-y: scroll;
   background-color: rgba(20, 20, 20, 0.6);
 }
+
+/* Info close works as the close function for the infoDiv. It closes the div if you click in the background */
+
+#infoClose {
+  width: 100%;
+  height: 170%;
+  position: absolute;
+  display: block;
+  top: 0;
+  z-index: -1;
+}
+
+/* Main div for infoDiv */
 
 #infoPage {
   width: 50vw;
@@ -333,6 +359,8 @@ iframe {
   display: flex;
   flex-direction: column;
 }
+
+/* The x on the top left of the InfoDiv */
 
 #infoX i {
   position: absolute;
@@ -354,6 +382,9 @@ iframe {
 #xmark {
   color: white;
 }
+
+/*  */
+
 #infoImg img {
   width: 100%;
 }
@@ -362,15 +393,6 @@ iframe {
   position: relative;
   height: 30%;
   overflow: hidden;
-}
-
-#infoClose {
-  width: 100%;
-  height: 170%;
-  position: absolute;
-  display: block;
-  top: 0;
-  z-index: -1;
 }
 
 .infoBox {
@@ -442,6 +464,8 @@ iframe {
   padding: 5%;
 }
 
+/* Similar Films inside the infoDiv */
+
 #similarBox {
   width: 100%;
   height: 50%;
@@ -485,6 +509,8 @@ iframe {
   width: 105%;
 }
 
+/* footer */
+
 footer {
   margin-bottom: 0px;
   width: 100%;
@@ -492,3 +518,5 @@ footer {
   position: relative;
   background-color: red;
 }
+
+/* Media queries */
