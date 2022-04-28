@@ -32,7 +32,7 @@ async function getMovies() {
   let resThriller = shuffle((await searchGenre(53)).results);
   document.getElementById("slide").innerHTML += `
     <div class="slideText">
-    <h1>${resPop.results[0].title}</h1>
+    <h2>${resPop.results[0].title}</h2>
     <div class="slideButtons"> 
     <div class="slidePlay" ><i class="fa-solid fa-circle-play"></i> Play Title </div> 
     <div class="slideInfo" id="${i}" onclick="moreInfo(this)" > <i class="fa-solid fa-circle-info"></i> More Info </div> 
